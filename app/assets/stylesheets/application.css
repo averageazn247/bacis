@@ -12,6 +12,18 @@
  *= require_self
  *= require_tree .
  */
+
+.hero-unit{
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  border:5px solid gray;
+  background-color: #eee;
+ 
+  li {
+  	margin-left: 20px
+  }
+}
 .authentications {
   margin-bottom: 30px;
 }

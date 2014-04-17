@@ -5,7 +5,8 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
-
+config.secret_key = '172aec32aea858ce9b40c4b1a2c4ae96d454f4cfc93a78e96ed8794e166ffe3ef2939e92f4d901cf141a54458c979aa8088a5748ef782
+5926b3fd9e4557118f8'
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
 
@@ -206,7 +207,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  config.omniauth :facebook, '375586332523152', '5c22fc24f3ad7e208526368e87b25df9', {:scope => 'publish_stream, email'}
+  config.omniauth :facebook, '1492776084279010', '1be9ef30428bd0379b6c58d5cfe50ff9', {:scope => 'publish_stream, email'}
   #config.omniauth :twitter, '6jaqMt7kE9iVxh8hX0mmtQ', '5ZIydxRBFfEJxc2EzedahIxoeO8g1hZCQVqZFtWWNM'
   config.omniauth :twitter, 'IKKOT98ZE5iJpLbQrno1Og', 'mVkcL3B95tKXYS2VjwEJruvpIBB39pUUw7j7vsj8'
   #config.omniauth :twitter, ENV["6jaqMt7kE9iVxh8hX0mmtQ"], ENV["5ZIydxRBFfEJxc2EzedahIxoeO8g1hZCQVqZFtWWNM"]
