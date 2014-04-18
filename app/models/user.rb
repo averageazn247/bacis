@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid, :name
   # attr_accessible :title, :body
   
   def apply_omniauth(omni)
@@ -18,12 +18,17 @@ class User < ActiveRecord::Base
                           :uid => omni['uid'], 
                           :token => omni['credentials'].token, 
                           :token_secret => omni['credentials'].secret)
+                          
   end
   
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
-      user.uid = auth.uid
+      user.uid = auth.uid 
+      user.email= auto.info.email
+      user.name=auto.info.name
+      user.address=auto.info.location
+      user.save!
     end
   end
     
@@ -57,6 +62,7 @@ class User < ActiveRecord::Base
       user = User.create(  provider:auth.provider,
                            uid:auth.uid,
                            email:auth.info.email,
+                           name:auto.info.name,
                            password:Devise.friendly_token[0,20]
                            )
     end

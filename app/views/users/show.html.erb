@@ -1,8 +1,10 @@
 <% provide(:title, @user.email) %>
+<div class="hero-unit">
 <div class="row">
-  <aside class="span4">
+   
     <section>
-      	<%= render 'shared/user_info' %>
+     	<%= render 'shared/user_info' %>
+      	</section>
 	<section>
 	 
 	  <% if @friends.any? %>
@@ -12,11 +14,11 @@
          <% end %>
        </div>
      <% end %>
-	</section>
-  </aside>
+	</section> 
 <div class="span8">
     <section>
 	    
      </section>
   </div>
+</div>
 </div>

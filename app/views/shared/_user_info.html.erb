@@ -1,11 +1,11 @@
  <%= gravatar_for current_user %>
-
-<h1>
+<h3><%= current_user.name %></h3>
+<h4>
   <%= current_user.email %>
-</h1>
+</h4>
 <span>
   <%= link_to "view my profile", '/users/' + current_user.id.to_s %>
 </span>
 <span>
- 
+   <%= current_user.address %>
 </span>

@@ -1,0 +1,50 @@
+<div class='hero-unit'>
+	
+	<h1>New event</h1>
+
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %> 
+  <% if signed_in? %>
+  <%= f.hidden_field :name, :value => current_user.name %>
+  <%else %>
+  <%= f.hidden_field name, :value => nil%>
+  <%end %>
+  <div class="field">
+    <%= f.label :title , 'Title'%><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :start, "Date"%><br />
+    <%= f.date_select :start %>
+  </div>  
+  Division
+    <div class="field">  
+  </div>  
+  <br />
+  <div class="field">
+    <%= f.label :start %><br />
+    <%= f.time_select :start %>
+  </div>
+ 
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', events_path %> 
+	
+	
+	
+	</div>

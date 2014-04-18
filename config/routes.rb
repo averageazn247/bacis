@@ -1,12 +1,20 @@
 MoltoSoldi::Application.routes.draw do
   
+  mount Mercury::Engine => '/'
+
   match "transactions/:action", :controller => 'transactions', :action => /[a-z]+/i
   resources :authentications
   resources :transactions
   resources :friends
   resources :posts
   resources :mails
-  
+  resources :events
+  mount Mercury::Engine => '/'
+
+
+  resources :events do
+    member { put :mercury_update }
+    end
   match '/auth/:provider/callback' => 'authentications#create'
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
@@ -18,6 +26,8 @@ MoltoSoldi::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+  match '/listevents', to: 'events#list'
+  match '/calevents', to: 'events#cal'
   
   resources :users do
     member do
