@@ -12,10 +12,7 @@ gem 'twitter'
 gem 'fb_graph'
 gem 'nifty-generators'
 gem 'paperclip'
-group :development, :test do
-  gem 'sqlite3', '1.3.5'
-  gem 'rspec-rails', '2.11.0'
-end
+ 
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,8 +28,15 @@ group :test do
   gem 'capybara', '1.1.2'
 end
 
-group :production do
-  gem 'pg', '0.12.2'
+group :test, :production do
+  gem 'pg'
+end
+
+group :development do
+  gem 'sqlite3'
+   gem 'rspec-rails', '2.11.0'
+    gem 'taps'
+  gem 'rvm'
 end
 
 gem "mocha", :group => :test
