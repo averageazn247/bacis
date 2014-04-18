@@ -19,7 +19,7 @@ class PostsController < ApplicationController
           me = FbGraph::User.me(facebook.token)
           me.feed!(
             :message => "#{params[:tweet]}",
-            :link => 'http://moltosoldi.herokuapp.com',
+            :link => 'http://EsportsEvent.herokuapp.com',
             :name => 'The best way of keeping track of lends & borrows from Orhan Can Ceylan.',
           )
         @message = "Your post successfully sent to FaceBook."

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140417192708) do
+ActiveRecord::Schema.define(:version => 20140418155424) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -24,15 +24,18 @@ ActiveRecord::Schema.define(:version => 20140417192708) do
   end
 
   create_table "events", :force => true do |t|
-    t.string "name"
-    t.string "location"
-    t.time   "start"
-    t.text   "desc"
-    t.text   "address"
-    t.text   "prizes"
-    t.text   "cost"
-    t.string "host"
-    t.string "type"
+    t.string   "name"
+    t.string   "location"
+    t.text     "contact"
+    t.time     "start"
+    t.text     "desc"
+    t.text     "address"
+    t.text     "prizes"
+    t.text     "cost"
+    t.string   "host"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "friends", :force => true do |t|
@@ -69,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20140417192708) do
     t.datetime "updated_at",                             :null => false
     t.string   "provider"
     t.string   "uid"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
