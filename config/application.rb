@@ -11,7 +11,7 @@ end
 
 module MoltoSoldi
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
+# Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
@@ -38,7 +38,7 @@ module MoltoSoldi
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-
+config.time_zone = 'Central Time (US & Canada)'
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
@@ -54,8 +54,8 @@ module MoltoSoldi
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
- config.assets.initialize_on_precompile = false
-
+    config.assets.enabled = true
+config.assets.initialize_on_precompile = false
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
