@@ -38,7 +38,6 @@ group :development do
   gem 'sqlite3'
    gem 'rspec-rails', '2.11.0'
     gem 'taps'
-  gem 'rvm'
 end
 
 gem "mocha", :group => :test
