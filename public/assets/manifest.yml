@@ -17,6 +17,8 @@ application.js: application-e741000c94ab03ac7f01150b0d0afdfb.js
 mercury.js: mercury-1e2b801bac5060dc6395b1a2633a85a7.js
 application.css: application-9b623facde593d5405d9d853cbbf5933.css
 mercury.css: mercury-b4b6d733f3a5f0c4cd7da8f2815e4f9c.css
+loading.gif: loading-c811d47aa4e029305c67d71fe56dff4e.gif
+progressbar.gif: progressbar-cb373a116c7c7be63909c566c169cec1.gif
 jquery-ui/animated-overlay.gif: jquery-ui/animated-overlay-691b2d4343303de8d214ad5395fd895d.gif
 jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/ui-bg_flat_0_aaaaaa_40x100-a1eb3e0764573ed4b261ca742ed96ac3.png
 jquery-ui/ui-bg_flat_75_ffffff_40x100.png: jquery-ui/ui-bg_flat_75_ffffff_40x100-841636c8f8d33987bb8d2f31e8ef92ca.png
