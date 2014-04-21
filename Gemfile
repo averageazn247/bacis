@@ -1,6 +1,8 @@
 source 'https://rubygems.org' 
-gem 'rails', '3.2.8'
+
 ruby "1.9.3"
+gem 'rails', '3.2.8'
+gem 'sass', '3.2.15'
 gem 'devise'
 gem 'mercury-rails'
 gem 'omniauth-twitter'
@@ -18,9 +20,10 @@ gem 'paperclip'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '3.2.5'
-  gem 'coffee-rails', '3.2.2'
+  gem 'sass-rails' ,'3.2.5'
   gem 'uglifier', '1.2.3'
+  gem 'coffee-rails'
+  gem 'jquery-fileupload-rails'
 end
 
 gem 'jquery-rails', '2.0.2'
@@ -30,7 +33,8 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.12.2'
+
   gem 'rails_12factor'
 end
 group :development, :test do

@@ -46,7 +46,7 @@ p
 6
 x
 10
-MoltoSoldi
+basic
 n
 x
 11
@@ -73,6 +73,6 @@ I
 15
 x
 82
-/Users/orhancanceylan/rails_project/moltoSoldi/config/initializers/secret_token.rb
+/Users/orhancanceylan/rails_project/basic/config/initializers/secret_token.rb
 p
 0
