@@ -18,6 +18,7 @@ html {
 
 body {
   padding-top: 60px;
+  overflow: auto;
 }
 
 section {
@@ -170,6 +171,12 @@ aside {
   }
 }
 
+html, body {
+  -webkit-transition: -webkit-transform 3s;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
 /* footer */
 
 footer {

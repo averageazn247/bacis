@@ -2,7 +2,8 @@
 	<h2>Events List</h2>
 	<% @events.each do |event|%>
 	
-	<%= event %>
+	<%= link_to event.name, event %>
+	<br />
 	<% end %>
 	
 	

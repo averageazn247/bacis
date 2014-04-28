@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style='overflow: auto;'>
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag    "application", media: "all" %>
@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>    
   </head>
-  <body>
+  <body style="overflow: auto;">
 	 <% flash.each do |name, msg| %>
 	        <%= content_tag :div, msg, id: "flash_#{name}" %>
 	      <% end %>

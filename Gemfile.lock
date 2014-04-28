@@ -85,6 +85,8 @@ GEM
       tzinfo
     ffi (1.9.3)
     formatador (0.2.4)
+    geocoder (1.2.0)
+    gmaps4rails (2.1.2)
     guard (2.6.0)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -294,6 +296,8 @@ DEPENDENCIES
   coffee-rails
   devise
   fb_graph
+  geocoder
+  gmaps4rails
   guard-rspec (= 1.2.1)
   guard-spork (= 1.2.0)
   jquery-fileupload-rails
