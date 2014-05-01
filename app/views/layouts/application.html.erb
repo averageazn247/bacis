@@ -14,6 +14,7 @@
     <%= render 'layouts/header' %>
     <div class="container">
       <%= yield %>
+      <%= yield :scripts %>
       <%= render 'layouts/footer' %>
     </div>
   </body>

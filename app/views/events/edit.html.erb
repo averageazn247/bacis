@@ -1,6 +1,6 @@
 <div class='hero-unit'>
 	
-	<h1>New event</h1>
+	<h1>Edit Event</h1>
 
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
@@ -18,7 +18,6 @@
   <%= f.hidden_field :name, :value => current_user.name %>
   <%else %>
   <%= f.hidden_field :name, :value => nil%>
-  If you are not signed in, anyone can edit the event
   <%end %>
   <div class="field">
     <%= f.label :title , 'Title'%><br />

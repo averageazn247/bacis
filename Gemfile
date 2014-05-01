@@ -16,7 +16,7 @@ gem 'fb_graph'
 gem 'nifty-generators'
 gem 'paperclip'
  gem 'geocoder'
-gem 'gmaps4rails'
+gem 'gmaps4rails', '1.5.6'
 
 # Gems used only for assets and not required
 # in production environments by default.

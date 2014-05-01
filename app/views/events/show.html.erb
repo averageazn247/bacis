@@ -5,13 +5,13 @@
 </script>
 <p>
    
-  <h3>  
+  <h1>  
       <div class="content">
   <div id="page_topic" class="mercury-region" data-type="editable" data-method="PUT"  data-mercury='full'>
  <%= raw  @event.title %>
   
   </div>
-  </div> </h3>
+  </div> </h1>
 </p>
 <p>
 
@@ -52,6 +52,7 @@
 					
 				
       	<% end%></div>
+      	
 				</div>
 </p>
 
@@ -60,12 +61,17 @@
 	<b>Address:</b>
 	    <div class="content">
   <div id="page_address" class="mercury-region" data-type="editable" data-method="PUT"  data-mercury='full'>
-   <%= raw @event.address %> 
+   <%= @event.address %> 
     
     
   </div>
   </div>
-</p>
+
+</p>  Latitude:
+  <%= @event.latitude%>
+  <p>longitude:
+  	<%= @event.longitude%>
+  </p>
 <p>
   <b>Description:</b>
     <div class="content">
@@ -75,6 +81,7 @@
     
   </div>
   </div>
+  <%= @event.cat%>
 </p>
 <% if current_user != nil%> 
 	<%= link_to 'edit date/time', edit_event_path(@event)  %> |
