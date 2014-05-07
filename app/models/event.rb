@@ -1,7 +1,5 @@
 class Event < ActiveRecord::Base
-  acts_as_gmappable :latitude => 'lat', :longitude => 'lng', :process_geocoding => :geocode?,
-                  :address => "address", :normalized_address => "address",
-                  :msg => "Sorry, not even Google could figure out where that is"
+ 
   attr_accessible :contact, :desc, :location, :name, :start, :cost, :cat
   attr_accessible :address, :prize, :host, :title, :latitudem, :longitude
   geocoded_by :address 

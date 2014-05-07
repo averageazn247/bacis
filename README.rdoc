@@ -1,4 +1,4 @@
-== MoltoSoldiApp
+== KhoaApp
 
 This project is coded for Rails Arena with Ruby on Rails. 
 It is a simple web applications that allows you to add friends and lend or borrow moneys to them. You will be able to keep track of the transactions and post them to a social media.

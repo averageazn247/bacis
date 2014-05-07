@@ -6,8 +6,14 @@ class StaticPagesController < ApplicationController
      @transactions_by_date = @transactions.group_by(&:deadline)
      @date = params[:date] ? Date.parse(params[:date]) : Date.today
    end
-   @json = Event.all.to_gmaps4rails
+   
    @locations = Event.all 
+   @json = Gmaps4rails.build_markers(@locations) do |city, marker|
+       marker.lat city.latitude
+       marker.lng city.longitude
+       
+      
+                  end
   end
 
   def help

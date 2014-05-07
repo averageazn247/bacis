@@ -1,4 +1,4 @@
-MoltoSoldi::Application.configure do
+Khoa::Application.configure do
 config.cache_classes = false
 
   # Log error messages when you accidentally call methods on nil.

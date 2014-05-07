@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-MoltoSoldi::Application.load_tasks
+Khoa::Application.load_tasks

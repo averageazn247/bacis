@@ -10,8 +10,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid, :name
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :provider, :uid, :name, :address,:latitude,:longitude
+  
   # attr_accessible :title, :body
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
   
   def apply_omniauth(omni)
     authentications.build(:provider => omni['provider'], 
@@ -27,7 +31,7 @@ class User < ActiveRecord::Base
       user.uid = auth.uid 
       user.email= auto.info.email
       user.name=auto.info.name
-      user.address=auto.info.location
+       user.address= auto.info.location
       user.save!
     end
   end

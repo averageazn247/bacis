@@ -6,6 +6,18 @@
 <span>
   <%= link_to "view my profile", '/users/' + current_user.id.to_s %>
 </span>
+<br />
 <span>
    <%= current_user.address %>
 </span>
+<br /><span>
+	
+	 Latitude: <%= current_user.latitude %>
+</span>
+
+<br />
+<span>
+	Longitude:	 <%= current_user.longitude%>
+	
+</span>
+<br />

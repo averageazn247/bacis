@@ -1,4 +1,4 @@
-MoltoSoldi::Application.routes.draw do
+Khoa::Application.routes.draw do
   
   mount Mercury::Engine => '/'
 

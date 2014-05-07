@@ -209,7 +209,7 @@ config.scoped_views = true
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :facebook, '1492776084279010', '1be9ef30428bd0379b6c58d5cfe50ff9', {:scope => 'publish_stream, email'}
   #config.omniauth :twitter, '6jaqMt7kE9iVxh8hX0mmtQ', '5ZIydxRBFfEJxc2EzedahIxoeO8g1hZCQVqZFtWWNM'
-  config.omniauth :twitter, 'IKKOT98ZE5iJpLbQrno1Og', 'mVkcL3B95tKXYS2VjwEJruvpIBB39pUUw7j7vsj8'
+  config.omniauth :twitter, 'mxIDjJzJTu0ZNq0UbN9oslPYf', 'LqQLpoMY1VJ7VQtD9aMrwREGpEpRTUiNk4Qo4l1TNicNM5AYoU'
   #config.omniauth :twitter, ENV["6jaqMt7kE9iVxh8hX0mmtQ"], ENV["5ZIydxRBFfEJxc2EzedahIxoeO8g1hZCQVqZFtWWNM"]
    
   # ==> Warden configuration

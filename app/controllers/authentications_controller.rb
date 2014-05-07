@@ -55,7 +55,7 @@ class AuthenticationsController < ApplicationController
       user.uid = omni.uid
       user.email = omni['extra']['raw_info'].email 
       user.name= omni['extra']['raw_info'].name
-      user.address=omni['extra']['raw_info'].location
+      user.address=omni['extra']['raw_info']['location']['name']
       user.apply_omniauth(omni)
 
       if user.save
