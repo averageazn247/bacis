@@ -10,13 +10,13 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require bootstrap
+
 //= require jquery
 
 //= require jquery_ujs
 
 //= require jquery.ui.datepicker
-
+//= require bootstrap
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
