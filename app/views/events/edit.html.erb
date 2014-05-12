@@ -24,15 +24,15 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :start, "Date"%><br />
-    <%= f.date_select :start %>
+    <%= f.label :dayof, "Date"%><br />
+    <%= f.date_select :dayof %>
   </div>  
  Event Type
     <div class="field">  
-     <%= f.radio_button :cat, 'tournament' %> Tournament
+    <%= f.radio_button :cat, 'tournament' %> Tournament
     <%= f.radio_button :cat, 'view' %> Viewing Party
     <%= f.radio_button :cat, 'con' %> Con/Pax
-    <%= f.radio_button :cat, 'other'%> Other
+    <%= f.radio_button :cat, 'other'%>
   </div>  
   <br />
   <div class="field">

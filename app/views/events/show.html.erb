@@ -21,7 +21,7 @@
 <p><p>
   <b>Date:</b>
    
-  <%= @event.start %> 
+  <%= @event.dayof.month %>/<%= @event.dayof.day%>/<%= @event.dayof.year%> 
 </p>
   <b>Start:</b>
        
@@ -31,8 +31,12 @@
 				<% if @event.start.min == 0 %>
 				  	00 PM
 				<% else %>
-				
+				<% if @event.start.min>9%>
 					<%= @event.start.min %> PM
+					
+					<% else %>
+					0<%= @event.start.min %> PM
+					<% end %>
 				<% end %>
 			
 			
@@ -42,8 +46,12 @@
 				<% if @event.start.min ==0 %>
 				  	00 AM
 				<% else %>
-				
+					<% if @event.start.min>9%>
 					<%= @event.start.min %> AM
+					
+					<% else%>
+					0<%= @event.start.min %> AM
+					<% end %>
 				<% end %>
 					
 				
