@@ -12,6 +12,7 @@
   
   </div>
   </div> </h1>
+  <h2>Type of event: <%= @event.cat%></h2>
 </p>
 <p>
 
@@ -19,16 +20,11 @@
 </p>
 <p><p>
   <b>Date:</b>
-  
-      <div class="content">
-  <div id="page_date" class="mercury-region" data-type="editable" data-method="PUT"  data-mercury='full'>
-  <%= @event.dayof %>
-  </div>
-  </div>
+   
+  <%= @event.dayof %> 
 </p>
   <b>Start:</b>
-      <div class="content">
-  <div id="page_time" class="mercury-region" data-type="editable" data-method="PUT"  data-mercury='full'>
+       
     	<% if @event.start.hour > 12 %>
 		 			<%= @event.start.hour - 12 %>:
 			
@@ -51,13 +47,12 @@
 				<% end %>
 					
 				
-      	<% end%></div>
-      	
-				</div>
+      	<% end%> 
 </p>
 
 
 <p>
+	
 	<b>Address:</b>
 	    <div class="content">
   <div id="page_address" class="mercury-region" data-type="editable" data-method="PUT"  data-mercury='full'>
@@ -81,7 +76,7 @@
     
   </div>
   </div>
-  <%= @event.cat%>
+ 
 </p>
 <% if current_user != nil%> 
 	<%= link_to 'edit date/time', edit_event_path(@event)  %> |

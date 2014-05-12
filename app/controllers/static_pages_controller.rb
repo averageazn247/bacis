@@ -8,17 +8,17 @@ class StaticPagesController < ApplicationController
    end
    
    @locations = Event.all 
-   @json = Gmaps4rails.build_markers(@locations) do |city, marker|
-       marker.lat city.latitude
-       marker.lng city.longitude
-       marker.infowindow city.desc
+   @json = Gmaps4rails.build_markers(@locations) do |event, marker|
+       marker.lat event.latitude
+       marker.lng event.longitude
+       marker.infowindow event.title+':'+event.desc
        marker.picture({
          'url' => "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
     "width"=>  36,
           "height"=> 36
        })
-       marker.title city.title
-       marker.json({ title: city.title})
+       marker.title event.title
+       marker.json({ title: event.title})
       
                   end
   end

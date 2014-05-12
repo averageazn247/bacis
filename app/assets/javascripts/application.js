@@ -16,8 +16,7 @@
 //= require jquery_ujs
 
 //= require jquery.ui.datepicker
-
-//= require turbolinks
+ 
 //= require underscore
 //= require gmaps/google
 
