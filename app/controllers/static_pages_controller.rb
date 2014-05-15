@@ -30,8 +30,24 @@ class StaticPagesController < ApplicationController
               marker.infowindow event.desc
               end
            end
-           marker.picture({ 
-        "width"=>  36,
+             if event.cat =='view'
+               url='http://files.softicons.com/download/toolbar-icons/wpzoom-developer-icon-set-by-wpzoom/png/32/tv.png'
+             elsif event.cat =='tournament'
+              url= 'https://developer.blackberry.com/builtforblackberry/webroot/img/common/game_icon.png'
+             
+             elsif event.cat =='con'
+               "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png"
+             else
+                url = 'https://mnli12.wikispaces.com/file/view/Google%20Maps%20Marker%20Blue.png/354394862/Google%20Maps%20Marker%20Blue.png'
+             end
+           marker.picture({  
+             
+            
+                  
+                  
+              'url' => url,  
+              
+              "width"=>  36,
               "height"=> 36
            })
            marker.title event.title
