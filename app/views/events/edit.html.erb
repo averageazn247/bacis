@@ -1,7 +1,7 @@
 <div class='hero-unit'>
 	
 	<h1>Edit Event</h1>
-<% if @event.name ==current_user.id or @event.name == nil%>
+<% if @event.name ==current_user.id.to_s or @event.name == nil%>
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
