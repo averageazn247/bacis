@@ -52,7 +52,7 @@ var handler = Gmaps.build('Google');
 handler.buildMap({
 	provider: {
       'draggable': true,
-      'zoom': 14,
+      'zoom': 20,
       // pass in other Google Maps API options here
     }, internal: {id: 'map'}}, function(){
 
@@ -62,7 +62,7 @@ handler.buildMap({
   var location = handler.addMarker({
     lat: position.coords.latitude,
     lng: position.coords.longitude,
-    infowindow: 'you '
+    infowindow: 'Current Location '
   })
     var markers = handler.addMarkers( <%= raw @json.to_json %>);
    handler.map.centerOn(location);  
