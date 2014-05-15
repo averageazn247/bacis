@@ -70,8 +70,12 @@
   </div>
   </div>
 
-</p>  Latitude:
+</p>  Latitude:<% if @event.latitude == nil %>
+warning place will not appear  on gmap because invalid address
+ <%= link_to 'fix', edit_event_path(@event)  
+<% end%>
   <%= @event.latitude%>
+  
   <p>longitude:
   	<%= @event.longitude%>
   </p>
@@ -88,7 +92,7 @@
 </p> 
 <% if current_user != nil %>
 <% if current_user.id.to_s == @event.name.to_s  %> 
-	<%= link_to 'edit date/time', edit_event_path(@event)  %> |
+	<%= link_to 'edit date/time/address', edit_event_path(@event)  %> |
 	<%= link_to "Edit Event Description", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_event_path(@event)} %>|
 	<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %> |
  
