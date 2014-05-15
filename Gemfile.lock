@@ -66,6 +66,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    combined_time_select (1.0.1)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -294,6 +295,7 @@ DEPENDENCIES
   capybara (= 1.1.2)
   childprocess (= 0.3.6)
   coffee-rails
+  combined_time_select (~> 1.0.1)
   devise
   fb_graph
   geocoder

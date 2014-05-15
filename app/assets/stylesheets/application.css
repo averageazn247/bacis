@@ -104,3 +104,6 @@ html, body {
   width: 720px;
   height: 427px;
 }
+input, textarea {
+    width: 70%;
+}

@@ -16,15 +16,19 @@ class EventsController < ApplicationController
       format.json { render json: @events }
     end
   end
-  def new
-    
-    @event=Event.new
-        respond_to do |format|
+    def new
+       @event = Event.new(params[:event])
+
+   
+
+    respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @event }
     end
   end
+ 
   def create
+         params[:event].parse_time_select! :start
        @event = Event.new(params[:event])
 
     respond_to do |format|
@@ -38,6 +42,7 @@ class EventsController < ApplicationController
     end
   end
   def update
+         params[:event].parse_time_select! :start
         @event = Event.find(params[:id])
 
     respond_to do |format|
@@ -51,6 +56,7 @@ class EventsController < ApplicationController
     end
   end
   def edit
+         params[:event].parse_time_select! :start
     @event=Event.find(params[:id])
   end
   def show
