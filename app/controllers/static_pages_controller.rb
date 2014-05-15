@@ -31,7 +31,7 @@ class StaticPagesController < ApplicationController
               end
            end
              if event.cat =='view'
-               url='http://files.softicons.com/download/toolbar-icons/wpzoom-developer-icon-set-by-wpzoom/png/32/tv.png'
+               url='https://cdn2.iconfinder.com/data/icons/simplus-media/165/Layer_15-01-32.png'
              elsif event.cat =='tournament'
               url= 'https://developer.blackberry.com/builtforblackberry/webroot/img/common/game_icon.png'
              

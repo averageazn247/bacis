@@ -1,0 +1,18 @@
+<div class="hero-unit">
+	<% @events.each do |event|%>
+	
+		<% if event.name.to_s == current_user.id.to_s%>
+			<%= link_to  event.title, event%>
+		<br />
+		<% end%>
+	
+	
+	<% end%>
+	
+	
+	
+	
+	
+	
+	
+	</div>

@@ -72,4 +72,8 @@ class EventsController < ApplicationController
   def map
     @event=Event.all
   end
+  def myevent
+    @events=Event.all
+    
+  end
 end
