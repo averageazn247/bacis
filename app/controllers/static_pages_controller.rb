@@ -35,7 +35,7 @@ class StaticPagesController < ApplicationController
              elsif event.cat =='tournament'
               url= 'https://developer.blackberry.com/builtforblackberry/webroot/img/common/game_icon.png'
              
-             elsif event.cat =='con'
+             elsif event.cat =='con/pax'
                "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png"
              else
                 url = 'https://mnli12.wikispaces.com/file/view/Google%20Maps%20Marker%20Blue.png/354394862/Google%20Maps%20Marker%20Blue.png'
