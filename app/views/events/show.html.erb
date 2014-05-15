@@ -86,11 +86,14 @@
   </div>
  
 </p>
-<% if current_user != nil%> 
+<% if current_user != nil %>
+<% if current_user.id == @event.name%> 
 	<%= link_to 'edit date/time', edit_event_path(@event)  %> |
 	<%= link_to "Edit Event Description", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_event_path(@event)} %>|
 	<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %> |
  
-	<%= link_to 'Back', events_path %>
+
+	<% end%>
 <%end %>
+	<%= link_to 'Back', events_path %>
 </div>
