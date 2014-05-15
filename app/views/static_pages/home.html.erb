@@ -55,11 +55,21 @@ handler.buildMap({
       'zoom': 9,
       // pass in other Google Maps API options here
     }, internal: {id: 'map'}}, function(){
-  var markers = handler.addMarkers( <%= raw @json.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds(); 
-  handler.getMap().setZoom(14)
-  handler.getMap().draggable(true)
+
+    if(navigator.geolocation)
+ 	 navigator.geolocation.getCurrentPosition(displayOnMap);
+ 	 function displayOnMap(position){
+  var location = handler.addMarker({
+    lat: position.coords.latitude,
+    lng: position.coords.longitude
+  })
+    var markers = handler.addMarkers( <%= raw @json.to_json %>);
+   handler.map.centerOn(location);
+     handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();  
+  };
+ 
+
   
 });
     
