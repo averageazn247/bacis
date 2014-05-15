@@ -8,6 +8,15 @@ class EventsController < ApplicationController
   post.save!
   render :json => {:url => post_path(post)}
   end
+    def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+
+    respond_to do |format|
+      format.html { redirect_to events_url }
+      format.json { head :no_content }
+    end
+  end
     def index
     @locations = Event.all
     @json = Event.all.to_gmaps4rails
