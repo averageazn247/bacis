@@ -2,7 +2,7 @@
 	<h2>Events List</h2>
 	<% @events.each do |event|%>
 	
-	<%= link_to event.title, event %>
+	<%= link_to event.title, event %>:<% event.dayof%>
 	<br />
 	<% end %>
 	
