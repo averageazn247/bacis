@@ -39,12 +39,7 @@
   <div class="field">
     <%= f.label :start %><br /> 
      <%= f.time_select :start ,
-  :combined => true,
-  :default => Time.now.change(:hour => 11 ), 
-  :time_separator => "",
-  :minute_interval => 60,
-  :start_hour => 1, 
-  :end_hour => 24  
+  :default => Time.now.change(:hour => 11 )
 %>
   </div>
  

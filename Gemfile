@@ -17,7 +17,7 @@ gem 'nifty-generators'
 gem 'paperclip'
  gem 'geocoder'
 gem 'gmaps4rails' 
-gem "combined_time_select", "~> 1.0.1"
+
 
 # Gems used only for assets and not required
 # in production environments by default.
