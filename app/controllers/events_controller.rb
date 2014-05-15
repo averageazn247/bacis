@@ -27,8 +27,7 @@ class EventsController < ApplicationController
     end
   end
  
-  def create
-         params[:event].parse_time_select! :start
+  def create 
        @event = Event.new(params[:event])
 
     respond_to do |format|
@@ -41,8 +40,7 @@ class EventsController < ApplicationController
       end
     end
   end
-  def update
-         params[:event].parse_time_select! :start
+  def update 
         @event = Event.find(params[:id])
 
     respond_to do |format|
@@ -55,8 +53,7 @@ class EventsController < ApplicationController
       end
     end
   end
-  def edit
-         params[:event].parse_time_select! :start
+  def edit 
     @event=Event.find(params[:id])
   end
   def show
