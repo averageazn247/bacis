@@ -15,9 +15,10 @@
     </div>
   <% end %> 
   <% if signed_in? %>
-  <%= f.hidden_field :name, :value => current_user.name %>
+  <%= f.hidden_field :name, :value => current_user.id %>
   <%else %>
   <%= f.hidden_field :name, :value => nil%>
+  If you are not signed in, anyone can edit the event
   <%end %>
   <div class="field">
     <%= f.label :title , 'Title'%><br />
@@ -32,7 +33,7 @@
     <%= f.radio_button :cat, 'tournament' %> Tournament
     <%= f.radio_button :cat, 'view' %> Viewing Party
     <%= f.radio_button :cat, 'con' %> Con/Pax
-    <%= f.radio_button :cat, 'other'%>
+    <%= f.radio_button :cat, 'other'%> Other
   </div>  
   <br />
   <div class="field">
@@ -41,7 +42,12 @@
   </div>
  
 <%= f.label :address, "Address "%> street, city, state or street, zip code
+<br />
 <%= f.text_field :address %>
+  <div class="field">
+<%= f.label :desc, "Description"%>
+<%= f.text_area :desc%>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>

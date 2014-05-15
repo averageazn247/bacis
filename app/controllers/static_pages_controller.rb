@@ -8,29 +8,38 @@ class StaticPagesController < ApplicationController
    end
    
    @locations = Event.all 
+ 
+
+  
    @json = Gmaps4rails.build_markers(@locations) do |event, marker|
-       marker.lat event.latitude
-       marker.lng event.longitude
-       if event.title !=nil
-         if event.desc !=nil
-       marker.infowindow event.title+": \n "+event.desc
-       else
-         marker.infowindow  event.desc
-       end
-       else
-         if event.desc != nil
-          marker.infowindow event.desc
-          end
-       end
-       marker.picture({ 
-    "width"=>  36,
-          "height"=> 36
-       })
-       marker.title event.title
-       marker.json({ title: event.title})
+     
       
-                  end
-  end
+     if event.dayof + (7*24*60*60) >=Date.today 
+       
+  
+         marker.lat event.latitude
+         marker.lng event.longitude
+         if event.title !=nil
+           if event.desc !=nil
+           marker.infowindow event.title+'-'+event.dayof.month.to_s+'/'+event.dayof.day.to_s+": \n "+event.desc
+           else
+             marker.infowindow  event.desc
+           end
+           else
+             if event.desc != nil
+              marker.infowindow event.desc
+              end
+           end
+           marker.picture({ 
+        "width"=>  36,
+              "height"=> 36
+           })
+           marker.title event.title
+           marker.json({ title: event.title})
+        
+           end
+      end 
+    end
 
   def help
   end

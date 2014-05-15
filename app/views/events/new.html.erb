@@ -15,7 +15,7 @@
     </div>
   <% end %> 
   <% if signed_in? %>
-  <%= f.hidden_field :name, :value => current_user.name %>
+  <%= f.hidden_field :name, :value => current_user.id %>
   <%else %>
   <%= f.hidden_field :name, :value => nil%>
   If you are not signed in, anyone can edit the event
@@ -44,8 +44,10 @@
 <%= f.label :address, "Address "%> street, city, state or street, zip code
 <br />
 <%= f.text_field :address %>
+  <div class="field">
 <%= f.label :desc, "Description"%>
 <%= f.text_area :desc%>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>
