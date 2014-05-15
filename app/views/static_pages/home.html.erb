@@ -36,8 +36,7 @@ find nearby esports events
     </h2>
 
   <div id='map' style='width: 800px; height: 400px;'></div>
-    <%= link_to "Sign up now!", new_user_session_path, 
-                                class: "btn btn-large btn-primary" %>
+    <%= link_to "Sign up now!", new_user_session_path, class: "btn btn-large btn-primary" %>
 
 
 
@@ -54,6 +53,7 @@ handler.buildMap({
 	provider: {
       'draggable': true,
       'zoom': 4,
+      'center': new google.maps.LatLng(30.26, -97.742)
       // pass in other Google Maps API options here
     }, internal: {id: 'map'}}, function(){
 
@@ -70,9 +70,9 @@ handler.buildMap({
         },
     infowindow: 'Current Location '
   })
+  handler.map.centerOn(location);  
     var markers = handler.addMarkers( <%= raw @json.to_json %>);
-   handler.map.centerOn(location);  
-  
+   
   };
  
 
