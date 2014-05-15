@@ -65,9 +65,8 @@ handler.buildMap({
     infowindow: 'you '
   })
     var markers = handler.addMarkers( <%= raw @json.to_json %>);
-   handler.map.centerOn(location);
-     handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();  
+   handler.map.centerOn(location);  
+  
   };
  
 
