@@ -81,6 +81,18 @@ class User < ActiveRecord::Base
     self.transactions.where(:t_type => 2, :status => 0).sum(:amount)
   end
   
-  
+    def User.new_remember_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def User.digest(token)
+    Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  private
+
+    def create_remember_token
+      self.remember_token = User.digest(User.new_remember_token)
+    end
   
 end

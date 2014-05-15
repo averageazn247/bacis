@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+  def index
+    if current_user
+      @id=current_user.id
+    end
+  end
     def location
   if params[:location].blank?
     if Rails.env.test? || Rails.env.development?
@@ -14,4 +18,6 @@ class ApplicationController < ActionController::Base
     @location
   end
 end 
+
+
 end

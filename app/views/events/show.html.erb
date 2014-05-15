@@ -85,9 +85,9 @@
   </div>
   </div>
  
-</p>
+</p> 
 <% if current_user != nil %>
-<% if current_user.id == @event.name or current_user.admin %> 
+<% if current_user.id.to_s == @event.name.to_s  %> 
 	<%= link_to 'edit date/time', edit_event_path(@event)  %> |
 	<%= link_to "Edit Event Description", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_event_path(@event)} %>|
 	<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %> |
