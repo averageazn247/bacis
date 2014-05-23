@@ -34,7 +34,17 @@ html, body {
 .authentications {
   margin-bottom: 30px;
 }
-
+.callout {
+ 	margin-top:10px;
+    background: #F9F9F9;
+    border-color: #e0e0e0;
+    color: #6F727A;
+    float: left;
+    border:5px solid gray;
+    width: 100%;
+    
+}
+ 
 .authentication {
   width: 130px;
   float: left;
