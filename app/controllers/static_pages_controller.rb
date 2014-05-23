@@ -14,11 +14,22 @@ class StaticPagesController < ApplicationController
    @json = Gmaps4rails.build_markers(@locations) do |event, marker|
      
       
-     if event.dayof + (7*24*60*60) >=Date.today 
+     if event.dayof + (7) >=Date.today 
        
   
          marker.lat event.latitude
          marker.lng event.longitude
+         marker.title event.title
+          marker.json({
+                id:       event.id, 
+                name:     event.title,
+                location: event.address,
+                website: event.website,
+                time: (event.dayof-Date.today+7),
+                cat: event.cat,
+                date: event.dayof.month.to_s+'/'+event.dayof.day.to_s+'/'+event.dayof.year.to_s
+              })
+         
          if event.title !=nil
            if event.desc !=nil
            marker.infowindow event.title+'- '+event.dayof.month.to_s+'/'+event.dayof.day.to_s+'/'+event.dayof.year.to_s+" : \n <br />"+event.desc

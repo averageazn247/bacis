@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140502220714) do
+ActiveRecord::Schema.define(:version => 20140523161411) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20140502220714) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "cat"
+    t.string   "website"
   end
 
   create_table "friends", :force => true do |t|
