@@ -63,6 +63,7 @@ class EventsController < ApplicationController
   end
   def show
     @event=Event.find(params[:id])
+    @site= "<a href='https://"+@event.website.to_s+"'> </a>"
   end
   def index
     @events=Event.all

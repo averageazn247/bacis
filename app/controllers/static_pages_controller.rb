@@ -32,7 +32,7 @@ class StaticPagesController < ApplicationController
          
          if event.title !=nil
            if event.desc !=nil
-           marker.infowindow event.title+'- '+event.dayof.month.to_s+'/'+event.dayof.day.to_s+'/'+event.dayof.year.to_s+" : \n <br />"+event.desc
+           marker.infowindow "<b>"+event.title+'</b> - '+event.dayof.month.to_s+'/'+event.dayof.day.to_s+'/'+event.dayof.year.to_s+" : \n <br />"+event.desc
            else
              marker.infowindow  event.desc
            end

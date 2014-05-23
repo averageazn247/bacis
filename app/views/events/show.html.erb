@@ -80,6 +80,12 @@ warning place will not appear  on gmap because invalid address
   	<%= @event.longitude%>
   </p>
 <p>
+	<br />
+	<p>website:
+		<% a = "https://" + @event.website.to_s%>
+		<a href=<%=a %>  > <%= raw @event.website %> </a> 
+		</p>
+		<br />
   <b>Description:</b>
     <div class="content">
   <div id="page_body" class="mercury-region" data-type="editable" data-method="PUT"  data-mercury='full'>

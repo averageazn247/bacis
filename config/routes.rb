@@ -1,5 +1,9 @@
 Khoa::Application.routes.draw do
   
+    namespace :mercury do
+      resources :images
+    end
+
   mount Mercury::Engine => '/'
 
   match "transactions/:action", :controller => 'transactions', :action => /[a-z]+/i

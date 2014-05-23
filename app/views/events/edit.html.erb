@@ -36,7 +36,12 @@
     <%= f.radio_button :cat, 'con/pax' %> Con/Pax
     <%= f.radio_button :cat, 'other'%> Other
   </div>  
+  
   <br />
+  <%= f.label :website , ' Website or link'%>
+<br />
+<%= f.text_field :website %>
+<br />
   <div class="field">
     <%= f.label :start %><br />
     <%= f.time_select :start %>
