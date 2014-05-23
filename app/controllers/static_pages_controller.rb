@@ -29,10 +29,12 @@ class StaticPagesController < ApplicationController
                 cat: event.cat,
                 date: event.dayof.month.to_s+'/'+event.dayof.day.to_s+'/'+event.dayof.year.to_s
               })
-         
+         if event.website ==nil
+           event.website=' '
+         end
          if event.title !=nil
            if event.desc !=nil
-           marker.infowindow "<b>"+event.title+'</b> - '+event.dayof.month.to_s+'/'+event.dayof.day.to_s+'/'+event.dayof.year.to_s+" : \n <br />"+event.desc
+           marker.infowindow "<b>"+event.title+'</b> - '+event.dayof.month.to_s+'/'+event.dayof.day.to_s+'/'+event.dayof.year.to_s+" : \n <br />"+"<a https://"+ event.website.to_s+">"+event.website+'</a><br />'+event.desc
            else
              marker.infowindow  event.desc
            end
