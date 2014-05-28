@@ -431,7 +431,7 @@ window.Mercury = {
       '[data-mercury]       { min-height: 10px; outline: 1px dotted #09F } ' +
       '[data-mercury]:focus { outline: none; -webkit-box-shadow: 0 0 10px #09F, 0 0 1px #045; box-shadow: 0 0 10px #09F, 0 0 1px #045 }' +
       '[data-mercury].focus { outline: none; -webkit-box-shadow: 0 0 10px #09F, 0 0 1px #045; box-shadow: 0 0 10px #09F, 0 0 1px #045 }' +
-      '[data-mercury]:after { content: "."; display: block; visibility: hidden; clear: both; height: 0; overflow: auto; }' +
+      '[data-mercury]:after { content: "."; display: block; visibility: hidden; clear: both; height: 0; overflow: hidden; }' +
       '[data-mercury] table { border: 1px dotted red; min-width: 6px; }' +
       '[data-mercury] th    { border: 1px dotted red; min-width: 6px; }' +
       '[data-mercury] td    { border: 1px dotted red; min-width: 6px; }' +
@@ -447,23 +447,6 @@ window.Mercury = {
   // ## Debug Mode
   //
   // Turning debug mode on will log events and other various things (using console.debug if available).
-  debug: false,
-   onload: function() {
-    //Mercury.PageEditor.prototype.iframeSrc = function(url) { return '/testing'; }
-    Mercury.on('ready', function() {
-      var link = $('#mercury_iframe').contents().find('#edit_link');
-    Mercury.saveURL = link.data('save-url');
-    link.hide();
-    });
-
-    Mercury.on('saved', function() {
-      window.location.href = window.location.href.replace(/\/editor\//i, '/');
-    });
-
-  }
+  debug: false
 
 };
-
-$(window).bind('mercury:saved', function() {
-  window.location = window.location.href.replace(/\/editor\//i, '/');
-});
