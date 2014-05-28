@@ -2,16 +2,7 @@ class AuthenticationsController < ApplicationController
   def index
     @authentications = current_user.authentications.all
   end
-      def authenticate_active_admin_user!
-    authenticate_user!
-    unless current_user.superadmin?
-      flash[:alert] = "Unauthorized Access!"
-      redirect_to root_path
-    end
-  end
-  def authenticate_admin!
- redirect_to new_user_session_path unless current_user.is_admin?
-end
+  
   def twitter
     omni = request.env["omniauth.auth"]
     authentication = Authentication.find_by_provider_and_uid(omni['provider'], omni['uid'])
