@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :provider, :uid, :name, :address,:latitude,:longitude, :admin
+  attr_accessible :provider, :uid, :name, :address,:latitude,:longitude
   
   # attr_accessible :title, :body
   geocoded_by :address
