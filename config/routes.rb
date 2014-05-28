@@ -1,5 +1,6 @@
 Khoa::Application.routes.draw do
-  
+   
+ 
     namespace :mercury do
       resources :images
     end
@@ -22,10 +23,11 @@ Khoa::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
-                       controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
+  
+ controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
  
   root to: 'static_pages#home' 
-  
+  ActiveAdmin.routes(self)
   
   match '/myevents', to: 'events#myevent'
   match '/users/:id', to: 'users#show'

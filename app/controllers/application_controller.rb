@@ -5,6 +5,16 @@ class ApplicationController < ActionController::Base
       @id=current_user.id
     end
   end
+  def authenticate_admin!
+ redirect_to new_user_session_path unless current_user.is_admin?
+end
+    def authenticate_admin_user!
+    authenticate_user!
+    unless current_user.superadmin?
+      flash[:alert] = "Unauthorized Access!"
+      redirect_to root_path
+    end
+  end
     def location
   if params[:location].blank?
     if Rails.env.test? || Rails.env.development?
