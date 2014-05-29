@@ -9,7 +9,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'bootstrap-sass', '2.0.4'
 gem 'jquery-ui-rails'
-gem 'will_paginate', '3.0.3'
+gem 'will_paginate'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'twitter'
 gem 'fb_graph'
@@ -17,7 +17,8 @@ gem 'nifty-generators'
 gem 'paperclip'
  gem 'geocoder'
 gem 'gmaps4rails' 
-
+gem 'activeadmin'
+gem 'kaminari'
 
 # Gems used only for assets and not required
 # in production environments by default.

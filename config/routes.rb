@@ -1,5 +1,7 @@
 Khoa::Application.routes.draw do
   
+  ActiveAdmin.routes(self)
+
     namespace :mercury do
       resources :images
     end
