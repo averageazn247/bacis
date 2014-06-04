@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140528214432) do
+ActiveRecord::Schema.define(:version => 20140530151507) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(:version => 20140528214432) do
   end
 
   create_table "events", :force => true do |t|
-    t.string   "name"
     t.string   "location"
     t.text     "contact"
     t.time     "start"
@@ -56,6 +55,9 @@ ActiveRecord::Schema.define(:version => 20140528214432) do
     t.float    "longitude"
     t.string   "cat"
     t.string   "website"
+    t.string   "maker"
+    t.boolean  "approve"
+    t.boolean  "isOnline"
   end
 
   create_table "friends", :force => true do |t|
@@ -106,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20140528214432) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "admin",                  :default => false, :null => false
+    t.string   "power"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

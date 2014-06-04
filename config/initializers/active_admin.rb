@@ -6,8 +6,8 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
   require 'activeadmin'
-  config.site_title = "Khoa"
-
+  config.site_title = "Khoa's Throne of Power"
+  
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #

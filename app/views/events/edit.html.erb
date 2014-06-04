@@ -1,9 +1,9 @@
 <div class='hero-unit'>
-	
+	<% if current_user != nil%>
 	<h1>Edit Event</h1>
-	
-<% if @event.name ==current_user.id.to_s or @event.name == nil%>
+
 <%= form_for(@event) do |f| %>
+
   <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -12,21 +12,18 @@
       <% @event.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
+      </ul>  
+    
     </div>
-  <% end %> 
-  <% if signed_in? %>
-  <%= f.hidden_field :name, :value => current_user.id %>
-  <%else %>
-  <%= f.hidden_field :name, :value => nil%>
-  If you are not signed in, anyone can edit the event
-  <%end %>
+  <% end %>  
+  <%= f.hidden_field :maker, :value => current_user.id %>
+
   <div class="field">
     <%= f.label :title , 'Title'%><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :dayof, "Date"%><br />
+    <%= f.label :dayof, "Date of Event"%><br />
     <%= f.date_select :dayof %>
   </div>  
  Event Type
@@ -36,33 +33,37 @@
     <%= f.radio_button :cat, 'con/pax' %> Con/Pax
     <%= f.radio_button :cat, 'other'%> Other
   </div>  
-  
   <br />
-  <%= f.label :website , ' Website or link'%>
-<br />
-<%= f.text_field :website %>
-<br />
   <div class="field">
-    <%= f.label :start %><br />
-    <%= f.time_select :start %>
+    <%= f.label :start %><br /> 
+     <%= f.time_select :start ,
+  :default => Time.now.change(:hour => 11 )
+%>
   </div>
  
 <%= f.label :address, "Address "%> street, city, state or street, zip code
 <br />
 <%= f.text_field :address %>
-  <div class="field">
+
+<%= f.label :website , ' Website or link'%>
+<br />
+<%= f.text_field :website %>
+<br />
+  <div class="field">Supports html mark up
 <%= f.label :desc, "Description"%>
 <%= f.text_area :desc%>
 </div>
   <div class="actions">
-    <%= f.submit 'save edit event',  
-                                class: "btn btn-large btn-primary"%>
+    <%= f.submit ' create new submit' ,  
+                                class: "btn btn-large btn-primary" %>
   </div>
 <% end %>
 
 
 <%= link_to 'Back', events_path %> 
 	
-	<% end%>
-	
+	 
+ <% else %>
+Sign in or else you can't make an event 
+	<% end %>
 	</div>

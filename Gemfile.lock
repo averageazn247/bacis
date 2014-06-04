@@ -327,6 +327,7 @@ DEPENDENCIES
   coffee-rails
   devise
   fb_graph
+  formtastic
   geocoder
   gmaps4rails
   guard-rspec (= 1.2.1)

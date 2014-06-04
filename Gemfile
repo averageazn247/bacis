@@ -19,6 +19,7 @@ gem 'paperclip'
 gem 'gmaps4rails' 
 gem 'activeadmin'
 gem 'kaminari'
+  gem 'formtastic'
 
 # Gems used only for assets and not required
 # in production environments by default.

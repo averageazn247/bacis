@@ -14,7 +14,9 @@ ActiveAdmin.register_page "Dashboard" do
       column :title do |event|
         link_to event.title, [:admin, event]
       end
-      column :dayof
+      column 'address',:address
+      column 'date', :dayof
+      column 'approved?', :approve
     end
     strong { link_to "View All Events", admin_events_path }
   end

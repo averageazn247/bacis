@@ -14,15 +14,13 @@
   </div> </h1>
   <h2>Type of event: <%= @event.cat%></h2>
 </p>
+
 <p>
-
-
-</p>
-<p><p>
   <b>Date:</b>
    
   <%= @event.dayof.month %>/<%= @event.dayof.day%>/<%= @event.dayof.year%> 
 </p>
+<p>
   <b>Start:</b>
        
     	<% if @event.start.hour > 12 %>
@@ -97,9 +95,9 @@ warning place will not appear  on gmap because invalid address
  
 </p> 
 <% if current_user != nil %>
-<% if current_user.id.to_s == @event.name.to_s  %> 
+<% if current_user.id.to_s == @event.maker.to_s  %> 
 	<%= link_to 'edit date/time/address', edit_event_path(@event)  %> |
-	<%= link_to "Edit Event Description", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_event_path(@event)} %>|
+	<%= link_to "Add/Edit Event Description", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_event_path(@event)} %>|
 	<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %> |
  
 
