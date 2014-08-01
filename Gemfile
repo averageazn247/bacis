@@ -7,6 +7,7 @@ gem 'devise'
 gem 'mercury-rails'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
 gem 'bootstrap-sass', '2.0.4'
 gem 'jquery-ui-rails'
 gem 'will_paginate'
@@ -20,6 +21,8 @@ gem 'gmaps4rails'
 gem 'activeadmin'
 gem 'kaminari'
   gem 'formtastic'
+  gem 'omniauth-google-oauth2'
+  
 
 # Gems used only for assets and not required
 # in production environments by default.

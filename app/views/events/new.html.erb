@@ -6,18 +6,7 @@
 
 <%= form_for(@event) do |f| %>
 
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
-      <% @event.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>  
-    
-    </div>
-  <% end %>  
+  
   <%= f.hidden_field :maker, :value => current_user.id %>
 
   <div class="field">
@@ -28,13 +17,15 @@
     <%= f.label :dayof, "Date of Event"%><br />
     <%= f.date_select :dayof %>
   </div>  
- Event Type
-    <div class="field">  
-    <%= f.radio_button :cat, 'tournament' %> Tournament
-    <%= f.radio_button :cat, 'view' %> Viewing Party
-    <%= f.radio_button :cat, 'con/pax' %> Con/Pax
-    <%= f.radio_button :cat, 'other'%> Other
-  </div>  
+ Event Type 
+    <%= f.radio_button    :cat, :value =>'tournament'%>  <%= f.label :cat,'Tournament' , :value => 'tournament' %>
+  <%= f.radio_button    :cat, :value =>'view'%>  <%= f.label :cat,'View Party' , :value => 'view'%>
+    <%= f.radio_button    :cat, :value =>'con/pax'%>  <%= f.label :cat,'Pax or Con' , :value => 'con/pax'%>
+  <%= f.radio_button    :cat, :value =>'other'%>  <%= f.label :cat,'Other' , :value => 'other'%>  
+  
+  	 
+  
+  <br />
   <br />
   <div class="field">
     <%= f.label :start %><br /> 
@@ -42,26 +33,36 @@
   :default => Time.now.change(:hour => 11 )
 %>
   </div>
- 
+   <div class="field">
 <%= f.label :address, "Address "%> street, city, state or street, zip code
+</div>
 <br />
+  <div class="field">
 <%= f.text_field :address %>
-
+</div>
+  <div class="field">
 <%= f.label :website , ' Website or link'%>
+</div>
 <br />
+  <div class="field">
 <%= f.text_field :website %>
+</div>
 <br />
+  <div class="field">
 <%= f.label :cost, 'Cost:'%>
+</div>
 <br />
-<%= f.text_field, :cost , :value => '0'%>
-<br />
+  <div class="field">
+<%= f.text_field  :cost , :value => '0'%>
+</div>
+<br />  <div class="field">
   <div class="field">Supports html mark up
 <%= f.label :desc, "Description"%>
 <%= f.text_area :desc%>
 </div>
+</div>
   <div class="actions">
-    <%= f.submit ' create new submit' ,  
-                                class: "btn btn-large btn-primary" %>
+    <%= f.submit ' create new submit' ,   class: "btn btn-large btn-primary" %>
   </div>
 <% end %>
 

@@ -27,8 +27,7 @@ class UsersController < ApplicationController
       @transactions = User.find(params[:id]).transactions.where(:t_type => 1).paginate(page: params[:page], per_page: 5)
      render 'borrows'
   end
-  
-
+ 
   
   
 end

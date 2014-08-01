@@ -1,5 +1,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -16,6 +17,7 @@ config.secret_key = '172aec32aea858ce9b40c4b1a2c4ae96d454f4cfc93a78e96ed8794e166
   # available as additional gems.
   require 'devise/orm/active_record'
 
+  require 'omniauth-google-oauth2'
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -211,7 +213,7 @@ config.scoped_views = true
   #config.omniauth :twitter, '6jaqMt7kE9iVxh8hX0mmtQ', '5ZIydxRBFfEJxc2EzedahIxoeO8g1hZCQVqZFtWWNM'
   config.omniauth :twitter, 'mxIDjJzJTu0ZNq0UbN9oslPYf', 'LqQLpoMY1VJ7VQtD9aMrwREGpEpRTUiNk4Qo4l1TNicNM5AYoU'
   #config.omniauth :twitter, ENV["6jaqMt7kE9iVxh8hX0mmtQ"], ENV["5ZIydxRBFfEJxc2EzedahIxoeO8g1hZCQVqZFtWWNM"]
-   
+   config.omniauth :google_oauth2,'212787565283-p7vppcphtodjdt1178fferpeetndo107.apps.googleusercontent.com','n3OynCm_72iQh9ovIslvR47g', { access_type: "offline", approval_prompt: "" }
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
