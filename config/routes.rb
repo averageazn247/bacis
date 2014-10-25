@@ -10,14 +10,22 @@ Khoa::Application.routes.draw do
 
   match "transactions/:action", :controller => 'transactions', :action => /[a-z]+/i
   resources :authentications
-  resources :transactions
+   
   resources :friends
   resources :posts
   resources :mails
+  resources :pickups
   resources :events
+  resources :drivers
   mount Mercury::Engine => '/'
+match '/driver/new' , to: 'drivers#new' 
+match '/driver/edit/:id' , to: 'drivers#edit'
+match '/driver/show/:id' , to: 'drivers#show'
+match '/drivers' , to: 'drives#index'
 
-
+  match '/pickups/new', to: 'pickups#new'
+   match '/pickups/edit/:id', to: 'pickups#edit'
+    match '/pickups/show/:id', to: 'pickups#show'
   resources :events do
     member { put :mercury_update }
     end

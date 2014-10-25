@@ -1,0 +1,24 @@
+<div class="hero-unit">
+
+<h4><%= @pickup.name%></h4>
+Time Created : <% if @pickup.now.hour <12 %>
+		<%= @pickup.now.hour %>:<% if @pickup.now.min <10%>0<%= @pickup.now.min %> <%else%> <%= @pickup.now.min %>  <%end %> AM
+		<% else%>
+		 <%= @pickup.now.hour-12 %> :<% if @pickup.now.min <10%>0<%= @pickup.now.min %>
+		 <%else%> <%= @pickup.now.min %>  
+		 <%end %> PM
+		 <%end%>
+ <br />
+ Ending location: <%= @pickup.address%>
+ 
+ <br /> 
+   Current Long: <%= @pickup.long%>,  Current Lat: <%=@pickup.lat%>
+ <br />
+ Ending long:<%= @pickup.end_long%>,Ending Lat: <%=@pickup.end_lat%>
+ <br /> 
+ Created by: <%= @pickup.creator%>
+ <br />
+
+
+
+</div>

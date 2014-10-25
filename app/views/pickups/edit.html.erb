@@ -1,0 +1,30 @@
+<div class="hero-unit">
+<%= form_for(@pickup) do |f| %>
+	
+		<%= f.label :address, "End Location"%><br />
+	  <%= f.text_field :address %></div>
+	  Time:
+	  <%= f.text_field :now, :value => Time.now %><br />
+	  
+	   <%= f.hidden_field :name, :value => current_user.name %> <br />
+	   IP:
+	   <br />
+	    <%= f.text_field :ip %>  <br />
+	   ending  long  <%= f.text_field :end_long %> 
+	    
+	    <br />
+	    ending lat  <%= f.text_field :end_lat %> 
+	    <br />
+	    current
+	    	    long  <%= f.text_field :long %> 
+	    
+	    <br />
+	  current  lat  <%= f.text_field :lat %> 
+	  <div id="lat"></div><br />	  <div id="long"></div>
+ <br />
+ <br />
+  <div><%= f.submit "Get me Now" , class:'btn'%></div>
+ 
+	<%end %>
+	
+</div>

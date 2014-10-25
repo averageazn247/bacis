@@ -16,15 +16,11 @@
 	        <%= content_tag :div, msg, id: "flash_#{name}" %>
 	      <% end %>
     <%= render 'layouts/header' %>
-  <div id='wrap'>
-    <%= render 'layouts/sidebar'%>
-    <div class="container" style="  float: right;margin-right: 30px; width: 80%">
+ 
     	 
 
       <%= yield %>
-      <%= yield :scripts %>
-      <%= render 'layouts/footer' %>
-   </div>
-    </div>
+      <%= yield :scripts %> 
+  
   </body>
 </html>

@@ -1,0 +1,26 @@
+
+
+<div class="hero-unit>
+	
+	<h4> <%= @driver.name%>'s shift'</h4>
+	Location: <%=@driver.location%>
+	<br />
+	Date: <%= @driver.day%>
+	<br />
+	
+<br />
+	Time:
+	<% if @driver.start.hour <12 %>
+		<%= @driver.start.hour %>:<% if @driver.start.min <10%>0<%= @driver.start.min %> <%else%> <%= @driver.start.min %>  <%end %> AM
+		<% else%>
+		 <%= @driver.start.hour-12 %> :<% if @driver.start.min <10%>0<%= @driver.start.min %>
+		 <%else%> <%= @driver.start.min %>  
+		 <%end %> PM
+		 <%end %>-
+		 	<% if @driver.end_time.hour <12 %>
+		<%= @driver.end_time.hour %>:<% if @driver.end_time.min<10%>0<%= @driver.start.min %> <%else%> <%= @driver.end_time.min %> <%end%>  AM
+		<% else%>
+		 <%= @driver.end_time.hour-12 %> :<% if @driver.end_time.min<10%>0<%= @driver.start.min %> <%else%> <%= @driver.end_time.min %> <%end%>  PM
+		 <%end %>
+	
+	</div>

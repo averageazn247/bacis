@@ -116,79 +116,14 @@ function error(err) {
 </script>
  <link href="tabs.css" rel="stylesheet" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <% if signed_in? %>
-    <div class="center hero-unit">
-  <div class="row">
-    <aside class="span4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-	  <section>
- 
-      </section>
-	<br>
-	<section>
-	    
-      </section>
-    </aside>
-	<div class="span8">
-
-    
-	</div>
-
- </div> <div style='width: 800px;'>
-  <div id="one_marker" style='width: 800px; height: 400px;'></div>
-</div> 
-<div id='sidebar_container' class="callout">
-</div>
- 
-  </div>  
-<% else %>
-  <div class="center hero-unit">
-    <h1> Esports Events</h1>
-
-    <h2>
-find nearby esports events 
-      
-    </h2>
- <ol id="toc">
-    <li><a href="#page-1"><span>Live Events</span></a></li>
-    <li><a href="#page-2"><span>Online Only Events</span></a></li> 
-</ol>
-<div class="content" id="page-1">
-   
-    <h2>Live Events</h2>
-
-  	<div style='width: 800px;'>
-  		<div id="one_marker" style='width: 800px; height: 400px;'></div>
-	</div>
-	<div id="callout">
-		<div id='sidebar_container'>
-		</div>
-	</div> 
-</div>
-
-
- 
-	 
-<div class="content" id="page-2">
-    <h2>Online</h2> 
-    
-    
-    <% @locations.each do |event|%>
-	<% if event.dayof + (7) >=Date.today and event.isOnline %>
-		<%= link_to event.title, event %>:<%= event.dayof %>
-	<br />
-	<% end%>
-	<% end %>
-</div>
- 
+   <div class="hero-unit">
+   	
+   	<br />
     <%= link_to "Sign up now!", new_user_session_path, class: "btn btn-large btn-primary" %>
 
+</div>
 
-
-
-<% end %>
+ 
  
 <script src="activatables.js" type="text/javascript"></script>
 <script type="text/javascript">

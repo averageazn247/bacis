@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140530151507) do
+ActiveRecord::Schema.define(:version => 20141025194130) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(:version => 20140530151507) do
     t.string   "token_secret"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "drivers", :force => true do |t|
+    t.string "name"
+    t.string "location"
+    t.time   "start"
+    t.time   "end_time"
+    t.date   "day"
+    t.text   "cost"
+    t.string "userid"
   end
 
   create_table "events", :force => true do |t|
@@ -75,6 +85,18 @@ ActiveRecord::Schema.define(:version => 20140530151507) do
     t.datetime "image_updated_at"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "pickups", :force => true do |t|
+    t.float    "userid"
+    t.string   "name"
+    t.string   "address"
+    t.float    "start_lat"
+    t.float    "start_long"
+    t.float    "end_lat"
+    t.float    "end_long"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "transactions", :force => true do |t|
